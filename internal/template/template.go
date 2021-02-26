@@ -69,7 +69,8 @@ func New(settings *print.Settings, items ...*Item) *Template {
 			return s
 		},
 		"anchorName": func(s string, t string) string {
-			return fmt.Sprintf("<a name=\"%s_%s\"></a> [%s](#%s_%s)", t, s, s, t, s)
+			anchorName := fmt.Sprintf("%s_%s", t, s)
+			return fmt.Sprintf("<a name=\"%s\"></a> [%s](#%s)", anchorName, s, anchorName)
 		},
 	})
 
