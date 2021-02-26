@@ -55,7 +55,7 @@ const (
 			| Name | Version |
 			|------|---------|
 			{{- range .Module.Requirements }}
-				| <a name="requirements_{{ .Name }}"></a> [{{ name .Name }}](#requirements_{{ .Name }}) | {{ tostring .Version | default "n/a" }} |
+				| {{ anchorName .Name "requirements" }} | {{ tostring .Version | default "n/a" }} |
 			{{- end }}
 		{{ end }}
 	{{ end -}}
@@ -70,7 +70,7 @@ const (
 			| Name | Version |
 			|------|---------|
 			{{- range .Module.Providers }}
-				| <a name="providers_{{ .FullName }}"></a> [{{ name .FullName }}](#providers_{{ .FullName }}) | {{ tostring .Version | default "n/a" }} |
+				| {{ anchorName .FullName "providers" }} | {{ tostring .Version | default "n/a" }} |
 			{{- end }}
 		{{ end }}
 	{{ end -}}
@@ -85,7 +85,7 @@ const (
 			| Name | Description | Type | Default |{{ if .Settings.ShowRequired }} Required |{{ end }}
 			|------|-------------|------|---------|{{ if .Settings.ShowRequired }}:--------:|{{ end }}
 			{{- range .Module.Inputs }}
-				| <a name="inputs_{{ .Name }}"></a> [{{ name .Name }}](#inputs_{{ .Name }}) | {{ tostring .Description | sanitizeTbl }} | {{ tostring .Type | type | sanitizeTbl }} | {{ value .GetValue | sanitizeTbl }} |
+				| {{ anchorName .Name "inputs" }} | {{ tostring .Description | sanitizeTbl }} | {{ tostring .Type | type | sanitizeTbl }} | {{ value .GetValue | sanitizeTbl }} |
 				{{- if $.Settings.ShowRequired -}}
 					{{ printf " " }}{{ ternary .Required "yes" "no" }} |
 				{{- end -}}
@@ -103,7 +103,7 @@ const (
 			| Name | Description |{{ if .Settings.OutputValues }} Value |{{ if $.Settings.ShowSensitivity }} Sensitive |{{ end }}{{ end }}
 			|------|-------------|{{ if .Settings.OutputValues }}-------|{{ if $.Settings.ShowSensitivity }}:---------:|{{ end }}{{ end }}
 			{{- range .Module.Outputs }}
-				| <a name="outputs_{{ .Name }}"></a> [{{ name .Name }}](#outputs_{{ .Name }}) | {{ tostring .Description | sanitizeTbl }} |
+				| {{ anchorName .Name "outputs" }} | {{ tostring .Description | sanitizeTbl }} |
 				{{- if $.Settings.OutputValues -}}
 					{{- $sensitive := ternary .Sensitive "<sensitive>" .GetValue -}}
 					{{ printf " " }}{{ value $sensitive | sanitizeTbl }} |
@@ -125,7 +125,7 @@ const (
 			| Name | Source | Version |
 			|------|--------|---------|
 			{{- range .Module.ModuleCalls }}
-				| <a name="modules_{{ .Name }}"></a> [{{ .Name }}](#modules_{{ .Name }}) | {{ .Source }} | {{ .Version }} |
+				| {{ anchorName .Name "modules" }} | {{ .Source }} | {{ .Version }} |
 			{{- end }}
 		{{ end }}
 	{{ end -}}

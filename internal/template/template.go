@@ -11,6 +11,7 @@ the root directory of this source tree.
 package template
 
 import (
+	"fmt"
 	gotemplate "text/template"
 
 	templatesdk "github.com/terraform-docs/plugin-sdk/template"
@@ -66,6 +67,9 @@ func New(settings *print.Settings, items ...*Item) *Template {
 			copy.EscapePipe = true
 			s = sanitizeItemForAsciidocTable(s, &copy)
 			return s
+		},
+		"anchorName": func(s string, t string) string {
+			return fmt.Sprintf("<a name=\"%s_%s\"></a> [%s](#%s_%s)", t, s, s, t, s)
 		},
 	})
 
