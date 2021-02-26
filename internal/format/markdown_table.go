@@ -36,11 +36,11 @@ const (
 			| Name |
 			|------|
 			{{- range .Module.Resources }}
-			<a name="resources_{{ .FullType }}"></a>
-			{{ if eq (len .URL) 0 }}
-				| {{ .FullType }}
+			| <a name="resources_{{ .FullType }}"></a>
+			{{- if eq (len .URL) 0 }}
+				{{ .FullType }}
 			{{- else -}}
-				| [{{ .FullType }}]({{ .URL }}) |
+				[{{ .FullType }}]({{ .URL }}) |
 			{{- end }}
 			{{- end }}
 		{{ end }}
