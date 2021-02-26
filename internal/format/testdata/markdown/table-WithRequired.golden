@@ -40,76 +40,76 @@ followed by another line of text.
 
 | Name | Version |
 |------|---------|
-| <a name="requirements_terraform"></a> terraform | >= 0.12 |
-| <a name="requirements_aws"></a> aws | >= 2.15.0 |
-| <a name="requirements_random"></a> random | >= 2.2.0 |
+| <a name="requirements_terraform"></a> [terraform](#requirements_terraform) | >= 0.12 |
+| <a name="requirements_aws"></a> [aws](#requirements_aws) | >= 2.15.0 |
+| <a name="requirements_random"></a> [random](#requirements_random) | >= 2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="providers_tls"></a> tls | n/a |
-| <a name="providers_aws"></a> aws | >= 2.15.0 |
-| <a name="providers_aws.ident"></a> aws.ident | >= 2.15.0 |
-| <a name="providers_null"></a> null | n/a |
+| <a name="providers_tls"></a> [tls](#providers_tls) | n/a |
+| <a name="providers_aws"></a> [aws](#providers_aws) | >= 2.15.0 |
+| <a name="providers_aws.ident"></a> [aws.ident](#providers_aws.ident) | >= 2.15.0 |
+| <a name="providers_null"></a> [null](#providers_null) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="modules_foo"></a> foo | bar | 1.2.3 |
-| <a name="modules_bar"></a> bar | baz | 4.5.6 |
-| <a name="modules_baz"></a> baz | baz | 4.5.6 |
+| <a name="modules_foo"></a> [foo](#modules_foo) | bar | 1.2.3 |
+| <a name="modules_bar"></a> [bar](#modules_bar) | baz | 4.5.6 |
+| <a name="modules_baz"></a> [baz](#modules_baz) | baz | 4.5.6 |
 
 ## Resources
 
 | Name |
 |------|
-| <a name="resources_aws_caller_identity"></a>[aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
-| <a name="resources_null_resource"></a>[null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
-| <a name="resources_tls_private_key"></a>[tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) |
+| [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
+| [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
+| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="inputs_unquoted"></a> unquoted | n/a | `any` | n/a | yes |
-| <a name="inputs_bool-3"></a> bool-3 | n/a | `bool` | `true` | no |
-| <a name="inputs_bool-2"></a> bool-2 | It's bool number two. | `bool` | `false` | no |
-| <a name="inputs_bool-1"></a> bool-1 | It's bool number one. | `bool` | `true` | no |
-| <a name="inputs_string-3"></a> string-3 | n/a | `string` | `""` | no |
-| <a name="inputs_string-2"></a> string-2 | It's string number two. | `string` | n/a | yes |
-| <a name="inputs_string-1"></a> string-1 | It's string number one. | `string` | `"bar"` | no |
-| <a name="inputs_string-special-chars"></a> string-special-chars | n/a | `string` | `"\\.<>[]{}_-"` | no |
-| <a name="inputs_number-3"></a> number-3 | n/a | `number` | `"19"` | no |
-| <a name="inputs_number-4"></a> number-4 | n/a | `number` | `15.75` | no |
-| <a name="inputs_number-2"></a> number-2 | It's number number two. | `number` | n/a | yes |
-| <a name="inputs_number-1"></a> number-1 | It's number number one. | `number` | `42` | no |
-| <a name="inputs_map-3"></a> map-3 | n/a | `map` | `{}` | no |
-| <a name="inputs_map-2"></a> map-2 | It's map number two. | `map` | n/a | yes |
-| <a name="inputs_map-1"></a> map-1 | It's map number one. | `map` | <pre>{<br>  "a": 1,<br>  "b": 2,<br>  "c": 3<br>}</pre> | no |
-| <a name="inputs_list-3"></a> list-3 | n/a | `list` | `[]` | no |
-| <a name="inputs_list-2"></a> list-2 | It's list number two. | `list` | n/a | yes |
-| <a name="inputs_list-1"></a> list-1 | It's list number one. | `list` | <pre>[<br>  "a",<br>  "b",<br>  "c"<br>]</pre> | no |
-| <a name="inputs_input_with_underscores"></a> input_with_underscores | A variable with underscores. | `any` | n/a | yes |
-| <a name="inputs_input-with-pipe"></a> input-with-pipe | It includes v1 \| v2 \| v3 | `string` | `"v1"` | no |
-| <a name="inputs_input-with-code-block"></a> input-with-code-block | This is a complicated one. We need a newline.<br>And an example in a code block<pre>default     = [<br>  "machine rack01:neptune"<br>]</pre> | `list` | <pre>[<br>  "name rack:location"<br>]</pre> | no |
-| <a name="inputs_long_type"></a> long_type | This description is itself markdown.<br><br>It spans over multiple lines. | <pre>object({<br>    name = string,<br>    foo  = object({ foo = string, bar = string }),<br>    bar  = object({ foo = string, bar = string }),<br>    fizz = list(string),<br>    buzz = list(string)<br>  })</pre> | <pre>{<br>  "bar": {<br>    "bar": "bar",<br>    "foo": "bar"<br>  },<br>  "buzz": [<br>    "fizz",<br>    "buzz"<br>  ],<br>  "fizz": [],<br>  "foo": {<br>    "bar": "foo",<br>    "foo": "foo"<br>  },<br>  "name": "hello"<br>}</pre> | no |
-| <a name="inputs_no-escape-default-value"></a> no-escape-default-value | The description contains `something_with_underscore`. Defaults to 'VALUE_WITH_UNDERSCORE'. | `string` | `"VALUE_WITH_UNDERSCORE"` | no |
-| <a name="inputs_with-url"></a> with-url | The description contains url. https://www.domain.com/foo/bar_baz.html | `string` | `""` | no |
-| <a name="inputs_string_default_empty"></a> string_default_empty | n/a | `string` | `""` | no |
-| <a name="inputs_string_default_null"></a> string_default_null | n/a | `string` | `null` | no |
-| <a name="inputs_string_no_default"></a> string_no_default | n/a | `string` | n/a | yes |
-| <a name="inputs_number_default_zero"></a> number_default_zero | n/a | `number` | `0` | no |
-| <a name="inputs_bool_default_false"></a> bool_default_false | n/a | `bool` | `false` | no |
-| <a name="inputs_list_default_empty"></a> list_default_empty | n/a | `list(string)` | `[]` | no |
-| <a name="inputs_object_default_empty"></a> object_default_empty | n/a | `object({})` | `{}` | no |
+| <a name="inputs_unquoted"></a> [unquoted](#inputs_unquoted) | n/a | `any` | n/a | yes |
+| <a name="inputs_bool-3"></a> [bool-3](#inputs_bool-3) | n/a | `bool` | `true` | no |
+| <a name="inputs_bool-2"></a> [bool-2](#inputs_bool-2) | It's bool number two. | `bool` | `false` | no |
+| <a name="inputs_bool-1"></a> [bool-1](#inputs_bool-1) | It's bool number one. | `bool` | `true` | no |
+| <a name="inputs_string-3"></a> [string-3](#inputs_string-3) | n/a | `string` | `""` | no |
+| <a name="inputs_string-2"></a> [string-2](#inputs_string-2) | It's string number two. | `string` | n/a | yes |
+| <a name="inputs_string-1"></a> [string-1](#inputs_string-1) | It's string number one. | `string` | `"bar"` | no |
+| <a name="inputs_string-special-chars"></a> [string-special-chars](#inputs_string-special-chars) | n/a | `string` | `"\\.<>[]{}_-"` | no |
+| <a name="inputs_number-3"></a> [number-3](#inputs_number-3) | n/a | `number` | `"19"` | no |
+| <a name="inputs_number-4"></a> [number-4](#inputs_number-4) | n/a | `number` | `15.75` | no |
+| <a name="inputs_number-2"></a> [number-2](#inputs_number-2) | It's number number two. | `number` | n/a | yes |
+| <a name="inputs_number-1"></a> [number-1](#inputs_number-1) | It's number number one. | `number` | `42` | no |
+| <a name="inputs_map-3"></a> [map-3](#inputs_map-3) | n/a | `map` | `{}` | no |
+| <a name="inputs_map-2"></a> [map-2](#inputs_map-2) | It's map number two. | `map` | n/a | yes |
+| <a name="inputs_map-1"></a> [map-1](#inputs_map-1) | It's map number one. | `map` | <pre>{<br>  "a": 1,<br>  "b": 2,<br>  "c": 3<br>}</pre> | no |
+| <a name="inputs_list-3"></a> [list-3](#inputs_list-3) | n/a | `list` | `[]` | no |
+| <a name="inputs_list-2"></a> [list-2](#inputs_list-2) | It's list number two. | `list` | n/a | yes |
+| <a name="inputs_list-1"></a> [list-1](#inputs_list-1) | It's list number one. | `list` | <pre>[<br>  "a",<br>  "b",<br>  "c"<br>]</pre> | no |
+| <a name="inputs_input_with_underscores"></a> [input_with_underscores](#inputs_input_with_underscores) | A variable with underscores. | `any` | n/a | yes |
+| <a name="inputs_input-with-pipe"></a> [input-with-pipe](#inputs_input-with-pipe) | It includes v1 \| v2 \| v3 | `string` | `"v1"` | no |
+| <a name="inputs_input-with-code-block"></a> [input-with-code-block](#inputs_input-with-code-block) | This is a complicated one. We need a newline.<br>And an example in a code block<pre>default     = [<br>  "machine rack01:neptune"<br>]</pre> | `list` | <pre>[<br>  "name rack:location"<br>]</pre> | no |
+| <a name="inputs_long_type"></a> [long_type](#inputs_long_type) | This description is itself markdown.<br><br>It spans over multiple lines. | <pre>object({<br>    name = string,<br>    foo  = object({ foo = string, bar = string }),<br>    bar  = object({ foo = string, bar = string }),<br>    fizz = list(string),<br>    buzz = list(string)<br>  })</pre> | <pre>{<br>  "bar": {<br>    "bar": "bar",<br>    "foo": "bar"<br>  },<br>  "buzz": [<br>    "fizz",<br>    "buzz"<br>  ],<br>  "fizz": [],<br>  "foo": {<br>    "bar": "foo",<br>    "foo": "foo"<br>  },<br>  "name": "hello"<br>}</pre> | no |
+| <a name="inputs_no-escape-default-value"></a> [no-escape-default-value](#inputs_no-escape-default-value) | The description contains `something_with_underscore`. Defaults to 'VALUE_WITH_UNDERSCORE'. | `string` | `"VALUE_WITH_UNDERSCORE"` | no |
+| <a name="inputs_with-url"></a> [with-url](#inputs_with-url) | The description contains url. https://www.domain.com/foo/bar_baz.html | `string` | `""` | no |
+| <a name="inputs_string_default_empty"></a> [string_default_empty](#inputs_string_default_empty) | n/a | `string` | `""` | no |
+| <a name="inputs_string_default_null"></a> [string_default_null](#inputs_string_default_null) | n/a | `string` | `null` | no |
+| <a name="inputs_string_no_default"></a> [string_no_default](#inputs_string_no_default) | n/a | `string` | n/a | yes |
+| <a name="inputs_number_default_zero"></a> [number_default_zero](#inputs_number_default_zero) | n/a | `number` | `0` | no |
+| <a name="inputs_bool_default_false"></a> [bool_default_false](#inputs_bool_default_false) | n/a | `bool` | `false` | no |
+| <a name="inputs_list_default_empty"></a> [list_default_empty](#inputs_list_default_empty) | n/a | `list(string)` | `[]` | no |
+| <a name="inputs_object_default_empty"></a> [object_default_empty](#inputs_object_default_empty) | n/a | `object({})` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="outputs_unquoted"></a> unquoted | It's unquoted output. |
-| <a name="outputs_output-2"></a> output-2 | It's output number two. |
-| <a name="outputs_output-1"></a> output-1 | It's output number one. |
-| <a name="outputs_output-0.12"></a> output-0.12 | terraform 0.12 only |
+| <a name="outputs_unquoted"></a> [unquoted](#outputs_unquoted) | It's unquoted output. |
+| <a name="outputs_output-2"></a> [output-2](#outputs_output-2) | It's output number two. |
+| <a name="outputs_output-1"></a> [output-1](#outputs_output-1) | It's output number one. |
+| <a name="outputs_output-0.12"></a> [output-0.12](#outputs_output-0.12) | terraform 0.12 only |
