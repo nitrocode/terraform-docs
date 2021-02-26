@@ -40,6 +40,12 @@ type Settings struct {
 	// scope: Global
 	OutputValues bool
 
+	// ShowAnchors show html anchors
+	//
+	// default: true
+	// scope: Markdown
+	ShowAnchors bool
+
 	// ShowColor print "colorized" version of result in the terminal
 	//
 	// default: true
@@ -126,6 +132,7 @@ func DefaultSettings() *Settings {
 		EscapePipe:       true,
 		IndentLevel:      2,
 		OutputValues:     false,
+		ShowAnchors:      true,
 		ShowColor:        true,
 		ShowHeader:       true,
 		ShowInputs:       true,
